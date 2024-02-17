@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display">
+        <input type="text" placeholder="0" id="input"  />
+      </div>
+      <div class="buttons">
+        <button value="AC" id="clear" class="operation-button" >AC</button>
+        <button value="DEL" id="erase" class="operation-button" >DEL</button>
+        <button value="/" class="operation-button button" onclick="Demo('/')">/</button>
+        <button value="*" class="operation-button button" onclick="Demo('*')" >*</button>
+
+        <button value="7" class="digit-button button" onclick="Demo(7)"/>7</button>
+        <button value="8" class="digit-button button" onclick="Demo(8)" />8</button>
+        <button value="9" class="digit-button button" onclick="Demo(9)" />9</button>
+        <button value="-" class="operation-button button" onclick="Demo('-')" />-</button>
+
+        <button value="6" class="digit-button button" onclick="Demo(6)" />6</button>
+        <button value="5" class="digit-button button" onclick="Demo(5)" />5</button>
+        <button value="4" class="digit-button button" onclick="Demo(4)" />4</button>
+        <button value="+" class="operation-button button" onclick="Demo('+')" />+</button>
+
+        <button value="1" class="digit-button button" onclick="Demo(1)" />1</button>
+        <button value="2" class="digit-button button" onclick="Demo(2)" />2</button>
+        <button value="3" class="digit-button button" onclick="Demo(3)" />3</button>
+
+        <button value="=" id="equal" class="operation-button" onclick="Demo1()" />=</button>
+        <button value="0" class="digit-button button" id="zero" onclick="Demo(0)" />0</button>
+        <button value="." class="digit-button button" onclick="Demo('.')" />.</button>
+      </div>
+    </div>
+    <script>
+        let clear = document.getElementById("clear");
+        let erase = document.getElementById("erase");
+      function Demo(num) {
+        document.getElementById("input").value += num;
+      }
+      function Demo1() {
+        document.getElementById("input").value = eval(
+          document.getElementById("input").value
+        );
+      };
+        clear.addEventListener("click", () => {
+    input.value = "";
+        });
+
+        erase.addEventListener("click", () => {
+    input.value = input.value.substr(0, input.value.length - 1);
+        });
+      
+    </script>
+  </body>
+</html>
